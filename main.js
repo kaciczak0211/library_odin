@@ -1,7 +1,6 @@
 //add book 
 const bookAdd = document.querySelector("#new-book-btn");
 const bookForm = document.querySelector('#new-book-form');
-const arrayFromStorage = localStorage.getItem('myLibrary');
 bookAdd.addEventListener("click", function(){
 
     bookForm.style.display = 'block'
@@ -14,7 +13,9 @@ document.querySelector("#close-btn").addEventListener('click', function(){
     bookForm.style.display = "none";
 });
 
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem("Books")) || [];
+
+
 
 
 
@@ -62,15 +63,31 @@ function bookLibrary(){
     let newBook = new book(title, author, pages, read);
     myLibrary.push(newBook);
     render();
-    //storage books
-    const stringifiledArray = JSON.stringify(myLibrary);
-    localStorage.setItem('myLibrary', stringifiledArray);
-    const arrayFromStorage = localStorage.getItem('myLibrary');
-    console.log(arrayFromStorage);
+
 }
 
 document.querySelector('#new-book-form').addEventListener("submit", function(event){
     event.preventDefault();
     bookLibrary();
 })
+
+
+//local storage
+// Local Storage
+// bookAdd.addEventListener('click', function(){
+//     const localBookStorage = document.getElementById('bookLocalStorage').value;
+//     myLibrary.push(localBookStorage);
+//     localStorage.setItem("Books", JSON.stringify(myLibrary));
+
+//     for(let i = 0; i < myLibrary.length; i++){
+//         let li = document.createElement("div");
+//         li.textContent = myLibrary[i]
+
+//         li.ap
+//     }
+// })
+
+
+
+
 
