@@ -12,6 +12,7 @@
         <div class="books">
             <h1>MY LIBRARY</h1>
         </div>
+        <dialog id="d">
             <form id="new-book-form" style="display: none;">
             <label for="title">Title:</label>
             <input type="text" id="title">
@@ -24,7 +25,9 @@
             <input type="submit" value="Add" id="submit">
             <input type="submit" value="Close" id="close-btn">
             </form>
-            <button id="new-book-btn">+ New Book</button>
+            
+        </dialog>
+        <button onclick="d.showModal()" id="new-book-btn">+ New Book</button>
     </div>
     <div id="library"></div>
     </div>
