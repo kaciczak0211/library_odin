@@ -1,35 +1,38 @@
-//empty array
-let myLibrary = [];
-//btns
+
 let bookAdd = document.querySelector("#new-book-btn");
 let bookForm = document.querySelector('#new-book-form');
 // modal
 const modalDiv = document.querySelector("#d")
+//loopun
 
-//looping
-function looping(){
-    bookAdd.addEventListener("click", function(){
+bookAdd.addEventListener("click", function(){
     bookForm.style.display = 'block';
-    d.showModal()
 });
-}
-looping();
 
-let next = 0;
 // new values 
 let libraryBank = document.querySelector("#library");
 libraryBank.innerHTML = "";
 
-//btn functions
+
 document.querySelector("#submit").addEventListener('click', function(){
+    bookForm.style.display = "none";
     modalDiv.style.display = "none";
+    formsAdding();
+
 });
 document.querySelector("#close-btn").addEventListener('click', function(){
-
+    bookForm.style.display = "none";
     modalDiv.style.display = "none";
 
 });
-//this
+
+let myLibrary = []
+
+
+
+
+
+
 function book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -38,6 +41,7 @@ function book(title, author, pages, read) {
 }
 
 // render books from forms
+
 function render() {
     let libraryBank = document.querySelector("#library");
     libraryBank.innerHTML = "";
@@ -59,9 +63,10 @@ function render() {
         let readBookEl = document.createElement("div");
         readBookEl.innerHTML = `<p>Read: ${singleBook.read} </p>`
         libraryBank.appendChild(readBookEl);
-    }
 
+    }
 }
+
 
 function bookLibrary(){
     let title = document.querySelector("#title").value;
@@ -74,10 +79,11 @@ function bookLibrary(){
 
 }
 
+
+function formsAdding(){
    document.querySelector('#new-book-form').addEventListener("submit", function(event){
     event.preventDefault();
     bookLibrary();
+
 }) 
-
-
-
+};
