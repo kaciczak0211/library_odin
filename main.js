@@ -1,19 +1,33 @@
-//add book 
-const bookAdd = document.querySelector("#new-book-btn");
-const bookForm = document.querySelector('#new-book-form');
-bookAdd.addEventListener("click", function(){
 
-    bookForm.style.display = 'block'
+let bookAdd = document.querySelector("#new-book-btn");
+let bookForm = document.querySelector('#new-book-form');
+// modal
+const modalDiv = document.querySelector("#d")
+//loopun
+
+bookAdd.addEventListener("click", function(){
+    bookForm.style.display = 'block';
 });
+
+let next = 0;
+// new values 
+let libraryBank = document.querySelector("#library");
+libraryBank.innerHTML = "";
+
 
 document.querySelector("#submit").addEventListener('click', function(){
     bookForm.style.display = "none";
+    modalDiv.style.display = "none";
+    formsAdding();
+
 });
 document.querySelector("#close-btn").addEventListener('click', function(){
     bookForm.style.display = "none";
+    modalDiv.style.display = "none";
+
 });
 
-let myLibrary = JSON.parse(localStorage.getItem("Books")) || [];
+let myLibrary = []
 
 
 
@@ -30,7 +44,7 @@ function book(title, author, pages, read) {
 // render books from forms
 
 function render() {
-    let libraryBank = document.querySelector(".titleBook");
+    let libraryBank = document.querySelector("#library");
     libraryBank.innerHTML = "";
     for (let i = 0; i < myLibrary.length; i++){
         let singleBook = myLibrary[i];
@@ -66,26 +80,14 @@ function bookLibrary(){
 
 }
 
-document.querySelector('#new-book-form').addEventListener("submit", function(event){
+
+function formsAdding(){
+   document.querySelector('#new-book-form').addEventListener("submit", function(event){
     event.preventDefault();
     bookLibrary();
-})
 
-
-//local storage
-// Local Storage
-// bookAdd.addEventListener('click', function(){
-//     const localBookStorage = document.getElementById('bookLocalStorage').value;
-//     myLibrary.push(localBookStorage);
-//     localStorage.setItem("Books", JSON.stringify(myLibrary));
-
-//     for(let i = 0; i < myLibrary.length; i++){
-//         let li = document.createElement("div");
-//         li.textContent = myLibrary[i]
-
-//         li.ap
-//     }
-// })
+}) 
+};
 
 
 
