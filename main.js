@@ -2,6 +2,7 @@
 let bookAdd = document.querySelector("#new-book-btn");
 let bookForm = document.querySelector('#new-book-form');
 
+
 bookAdd.addEventListener("click", function(){
     bookForm.style.display = 'block';
 });
@@ -57,7 +58,23 @@ function render() {
         readBookEl.innerHTML = `<p>Read: ${singleBook.read} </p>`
         libraryBank.appendChild(readBookEl);
 
+        
+        let removeBtn = document.createElement("div");
+        removeBtn.innerHTML = `<button id="remove_btn">Remove</button>`
+        libraryBank.appendChild(removeBtn);
+
+        const removeButton = document.getElementById("remove_btn");
+
+        removeButton.addEventListener('click', function(event){
+            singleBookEl.remove();
+            authorBookEl.remove();
+            pagesBookEl.remove();
+            readBookEl.remove();
+            removeBtn.remove();
+        });
+
     }
+
 }
 
 
@@ -80,3 +97,6 @@ function bookLibrary(){
 document.querySelector('#close-btn').addEventListener("click", function(event){
     event.preventDefault();
 }) 
+
+
+
