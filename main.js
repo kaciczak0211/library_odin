@@ -1,9 +1,6 @@
 
 let bookAdd = document.querySelector("#new-book-btn");
 let bookForm = document.querySelector('#new-book-form');
-// modal
-const modalDiv = document.querySelector("#d")
-//loopun
 
 bookAdd.addEventListener("click", function(){
     bookForm.style.display = 'block';
@@ -16,13 +13,9 @@ libraryBank.innerHTML = "";
 
 document.querySelector("#submit").addEventListener('click', function(){
     bookForm.style.display = "none";
-    modalDiv.style.display = "none";
-    formsAdding();
-
 });
 document.querySelector("#close-btn").addEventListener('click', function(){
     bookForm.style.display = "none";
-    modalDiv.style.display = "none";
 
 });
 
@@ -79,11 +72,11 @@ function bookLibrary(){
 
 }
 
-
-function formsAdding(){
    document.querySelector('#new-book-form').addEventListener("submit", function(event){
     event.preventDefault();
     bookLibrary();
-
 }) 
-};
+
+document.querySelector('#close-btn').addEventListener("click", function(event){
+    event.preventDefault();
+}) 
