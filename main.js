@@ -67,6 +67,7 @@ function render() {
 
         if(singleBook.read === true){
             singleBookEl.style.background = "green"
+            singleBook.read.value === "Yes";
         }else{
             singleBookEl.style.background = "red"
         }
