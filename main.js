@@ -5,6 +5,7 @@ let bookForm = document.querySelector('#new-book-form');
 
 bookAdd.addEventListener("click", function(){
     bookForm.style.display = 'block';
+    bookAdd.style.display = "none";
 });
 
 // new values 
@@ -17,6 +18,7 @@ document.querySelector("#submit").addEventListener('click', function(){
 });
 document.querySelector("#close-btn").addEventListener('click', function(){
     bookForm.style.display = "none";
+    bookAdd.style.display = "block";
 
 });
 
@@ -52,18 +54,19 @@ function render() {
         singleBookEl.setAttribute("class", "book-section");
         singleBookEl.innerHTML = `
         <div class="header">
-        <h3>Title:${singleBook.title}</h3>
-        <h4>By:${singleBook.author}</h3>
+        <h3>Title: ${singleBook.title}</h3>
+        <h4>By: ${singleBook.author}</h3>
         </div>
         <div class="addition">
-        <h4>Pages:${singleBook.pages}</h4>
-        <h4>Done:${singleBook.read}</h4>        
+        <h4>Pages: ${singleBook.pages}</h4>
+        <h4>Done: ${singleBook.read}</h4>        
         </div>
         <button id="remove_btn" onclick="removeBook(${i})" >Remove</button>
         `
         libraryBank.appendChild(singleBookEl);
-        console.log(singleBookEl);
+
     }
+
 
 }
 
@@ -86,6 +89,7 @@ function bookLibrary(){
    document.querySelector('#new-book-form').addEventListener("submit", function(event){
     event.preventDefault();
     bookLibrary();
+    bookAdd.style.display = "block";
 }) 
 
 document.querySelector('#close-btn').addEventListener("click", function(event){

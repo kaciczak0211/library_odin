@@ -1,11 +1,12 @@
 html{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #f3f4f6;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #4080ff;
 
 }
 
 h1{
-    background-color: aqua;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
 }
 #new-book-btn{
     display: block;
@@ -22,4 +23,24 @@ h1{
 #new-book-form{
     text-align: center;
 
+}
+#library{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.book-section{
+    margin: 20px;
+    color: white;
+}
+
+.books{
+    color: white;
+
+}
+
+
+#author, #title, #pages, #read{
+    margin: 5px;
 }
