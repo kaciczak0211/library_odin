@@ -59,7 +59,7 @@ function render() {
         </div>
         <div class="addition">
         <h4>Pages: ${singleBook.pages}</h4>
-        <h4>Done: ${singleBook.read}</h4>        
+        <h4>Done? ${singleBook.read}</h4>        
         </div>
         <button id="remove_btn" onclick="removeBook(${i})" >Remove</button>
         `
@@ -67,13 +67,11 @@ function render() {
 
         if(singleBook.read === true){
             singleBookEl.style.background = "green"
-            singleBook.read.value === "Yes";
         }else{
             singleBookEl.style.background = "red"
         }
 
     }
-
 
 }
 
@@ -89,8 +87,6 @@ function bookLibrary(){
     setData();
     
 }
-
-
 
 
    document.querySelector('#new-book-form').addEventListener("submit", function(event){
