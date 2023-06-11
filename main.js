@@ -62,19 +62,7 @@ function render() {
         <button id="remove_btn" onclick="removeBook(${i})" >Remove</button>
         `
         libraryBank.appendChild(singleBookEl);
-
-        let authorBookEl = document.createElement("div");
-        authorBookEl.innerHTML = `<p>Author: ${singleBook.author} </p>`
-        libraryBank.appendChild(authorBookEl);
-
-        let pagesBookEl = document.createElement("div");
-        pagesBookEl.innerHTML = `<p>Pages: ${singleBook.pages} </p>`
-        libraryBank.appendChild(pagesBookEl);
-
-        let readBookEl = document.createElement("div");
-        readBookEl.innerHTML = `<p>Read: ${singleBook.read} </p>`
-        libraryBank.appendChild(readBookEl);
-
+        console.log(singleBookEl);
     }
 
 }
@@ -104,3 +92,21 @@ document.querySelector('#close-btn').addEventListener("click", function(event){
     event.preventDefault();
 
 }) 
+
+
+function setData() {
+    localStorage.setItem(`myLibrary`, JSON.stringify(myLibrary));
+};
+
+function restore() {
+    if(!localStorage.myLibrary) {
+        render();
+    }else {
+        let objects = localStorage.getItem('myLibrary')
+        objects = JSON.parse(objects);
+        myLibrary = objects;
+        render();
+    }
+};
+
+restore();
