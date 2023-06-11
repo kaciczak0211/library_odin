@@ -11,9 +11,7 @@ h1{
 #new-book-btn{
     display: block;
     margin: 0 auto;
-    z-index: 0;
     margin-top: 20px;
-
 }
 
 .books{
@@ -33,6 +31,7 @@ h1{
 .book-section{
     margin: 20px;
     color: white;
+    border-radius: 10px;
 }
 
 .books{
@@ -43,4 +42,15 @@ h1{
 
 #author, #title, #pages, #read{
     margin: 5px;
+}
+
+h4, h3{
+    background-color: white;
+    color: #000000;
+    padding: 10px;
+}
+
+#remove_btn{
+    display: block;
+    margin: 0 auto;
 }

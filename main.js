@@ -65,6 +65,12 @@ function render() {
         `
         libraryBank.appendChild(singleBookEl);
 
+        if(singleBook.read === true){
+            singleBookEl.style.background = "green"
+        }else{
+            singleBookEl.style.background = "red"
+        }
+
     }
 
 
